@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -43,11 +44,21 @@ public class Helpers {
     }
 
     public static void closeQuit() {
-        //driver.close(); // close the current tab
+        // driver.close(); // close the current tab
         driver.quit(); // quit the browser
     }
 
     public static void click(By byValue) {
         driver.findElement(byValue).click();
+    }
+
+    public static void scrollDown() {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("scrollBy(0,4000)");
+    }
+
+    public static void scrollUp() {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("scrollBy(1000, 0)");
     }
 }

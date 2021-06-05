@@ -15,9 +15,8 @@ public class SeleniumDragAndDrop {
 //       float fa = 10.1f;
 //        int ia = (int)fa; // 10
 
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        Helpers.scrollDown();
 
-        jse.executeScript("scrollBy(0,4000)");
         Helpers.sleep(2L);
 
         WebElement source = driver.findElement(By.id("sourceImage"));
