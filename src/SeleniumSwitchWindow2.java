@@ -12,7 +12,7 @@ public class SeleniumSwitchWindow2 {
         Helpers.launch("https://demoqa.com/browser-windows");
         Helpers.sleep(2L);
 
-        Helpers.click(By.id("tabButton"));
+        Helpers.click(By.id("messageWindowButton"));
 
         String firstWindow = driver.getWindowHandle(); // step1
         Set<String> allWindows = driver.getWindowHandles(); // step2
@@ -23,7 +23,7 @@ public class SeleniumSwitchWindow2 {
             if(!firstWindow.equalsIgnoreCase(secondWindow)) {
                 driver.switchTo().window(secondWindow);  // step5
                 Helpers.sleep(2L);
-                String btnText = driver.findElement(By.id("sampleHeading")).getText();
+                String btnText = driver.findElement(By.tagName("body")).getText();
                 Helpers.print(btnText);
                 driver.close(); // step6
             }
